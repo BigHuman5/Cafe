@@ -16,7 +16,7 @@ namespace Cafe.Models.GroupProducts
 
         public async Task<List<ProductsResponseModel>> BuildAll()
         {
-            IEnumerable<GroupProductsDTO> groupProductsDTO = await services.GetAll();
+            IEnumerable<GroupProductsDTO> groupProductsDTO = await services.All();
             var mapper = new MapperConfiguration(
                 cfg => cfg.CreateMap<GroupProductsDTO, ProductsResponseModel>())
                 .CreateMapper();

@@ -11,7 +11,7 @@ namespace Cafe.BLL.DTO
     public class GroupProductsDTO
     {
         public int Id { get; set; }
-        [Required]
+        //[Required]
         public string Name { get; set; }
 
         public bool isDelete { get; set; }

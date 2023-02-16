@@ -4,6 +4,7 @@ using Cafe.DAL.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cafe.DAL.Migrations
 {
     [DbContext(typeof(CafeDbContext))]
-    partial class CafeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230216120308_Add_Groups_Products_Ingredients_And_IngredietntsInProducts")]
+    partial class AddGroupsProductsIngredientsAndIngredietntsInProducts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

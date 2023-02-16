@@ -18,7 +18,7 @@ namespace Cafe.BLL.Services
         /// Получения списках всех продутов.
         /// </summary>
         /// <returns></returns>
-        public async Task<List<ProductsDTO>> GetAll()
+        public async Task<List<ProductsDTO>> All()
         {
             var result = await data.Products.Join(data.GroupProducts,
                 p => p.GroupId,

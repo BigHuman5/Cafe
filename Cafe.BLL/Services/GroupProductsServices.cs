@@ -26,7 +26,7 @@ namespace Cafe.BLL.Services
         /// Получение списка всех категорий.
         /// </summary>
         /// <returns></returns>
-        public async Task<List<GroupProductsDTO>> GetAll()
+        public async Task<List<GroupProductsDTO>> All()
         {
             var GroupProductsDTO = await data.GroupProducts
                 .Where(p => !p.isDeleted)

@@ -16,7 +16,8 @@ builder.Services.AddDbContext<CafeDbContext>(options =>
 
 builder.Services
     .AddTransient<IGroupProductsServices, GroupProductsServices>()
-    .AddTransient<IProductsServices, ProductsServices>();
+    .AddTransient<IProductsServices, ProductsServices>()
+    .AddTransient<IIngredientsServices, IngredientsServices>();
 
 builder.Services.AddControllers();
 

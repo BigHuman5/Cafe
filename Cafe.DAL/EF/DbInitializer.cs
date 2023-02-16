@@ -78,6 +78,51 @@ namespace Cafe.DAL.EF
                 context.Products.Add(s);
             }
             context.SaveChanges();
+            //
+            var Ingredients = new Ingredients[]
+            {
+                new Ingredients {
+                    GroupProductId=1,
+                    Name="Курица",
+                },
+                new Ingredients {
+                    Name="Ананасы",
+                    GroupProductId=1,
+                },
+                new Ingredients {
+                    GroupProductId=1,
+                    Name="Сыр",
+                    isDeleted=true,
+                },
+            };
+
+            foreach (Ingredients s in Ingredients)
+            {
+                context.Ingredients.Add(s);
+            }
+            context.SaveChanges();
+            //
+            var IngredientsInProducts = new IngredientsInProducts[]
+            {
+                new IngredientsInProducts {
+                    IngredientId=1,
+                    ProductId=1,
+                },
+                new IngredientsInProducts {
+                    IngredientId=2,
+                    ProductId=2,
+                },
+                new IngredientsInProducts {
+                    IngredientId=3,
+                    ProductId=1,
+                },
+            };
+
+            foreach (IngredientsInProducts s in IngredientsInProducts)
+            {
+                context.IngredientsInProducts.Add(s);
+            }
+            context.SaveChanges();
         }
     }
 }

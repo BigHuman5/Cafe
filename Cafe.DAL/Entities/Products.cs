@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Cafe.DAL.Entities
 {
-    public class Products
+    public class Products : Base
     {
         [Key]
         public int Id { get; set; }
@@ -16,7 +10,7 @@ namespace Cafe.DAL.Entities
         [Required]
         public GroupProducts Group { get; set; }
 
-        public int GroupId { get; set; }
+        public int? GroupId { get; set; }
 
         [Required]
         [MaxLength(40)]
@@ -29,6 +23,6 @@ namespace Cafe.DAL.Entities
         [MaxLength(5)]
         public int  Price { get; set; } = 0;
 
-        public bool isDeleted { get; set; } = false;
+        public IEnumerable<IngredientsInProducts> Ingredients { get; set;}
     }
 }
