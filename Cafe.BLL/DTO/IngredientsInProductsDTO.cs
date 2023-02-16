@@ -3,12 +3,12 @@
 
 namespace Cafe.BLL.DTO
 {
-    public class IngredientsInProductsDTO
+    public class IngredientsInProductsDTO : BaseDTO
     {
         public int Id { get; set; }
-        public Ingredients Ingredient { get; set; }
+        public IngredientsDTO Ingredient { get; set; }
         public int IngredientId { get; set; }
-        public Products Product { get; set; }
+        public ProductsDTO Product { get; set; }
         public int ProductId { get; set; }
     }
 }

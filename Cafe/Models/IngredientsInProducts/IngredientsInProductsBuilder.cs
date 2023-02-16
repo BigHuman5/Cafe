@@ -24,5 +24,22 @@ namespace Cafe.Models.IngredientsInProducts
                 (ingredientsInProductsDTO);
             return ingredientsInProductResponseModels;
         }
+
+        public async Task<List<CompositionProductResponseModel>> Composition(int id)
+        {
+            var DTO = await services.Composition(id);
+            List<CompositionProductResponseModel> modelList = new List<CompositionProductResponseModel>();
+            foreach(var s in DTO)
+            {
+                CompositionProductResponseModel model = new()
+                {
+                    IdIngredients = s.Ingredient.Id,
+                    Name = s.Ingredient.Name,
+                };
+                modelList.Add(model);
+            }
+            
+            return modelList;
+        }
     }
 }

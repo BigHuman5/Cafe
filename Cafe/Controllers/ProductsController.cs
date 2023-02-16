@@ -14,9 +14,17 @@ namespace Cafe.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> All()
+        public async Task<ActionResult> AllShort()
         {
-            var result = await new ProductBuilder(this.services).BuildAll();
+            var result = await new ProductBuilder(this.services).BuildAllShort();
+
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> AllInDetails()
+        {
+            var result = await new ProductBuilder(this.services).BuildAllInDetails();
 
             return Ok(result);
         }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Cafe.Models.Products
 {
-    public class ProductsResponseModel
+    public class ProductsShortResponseModel
     {
         public int Id { get; set; }
 

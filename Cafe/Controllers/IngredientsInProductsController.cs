@@ -1,6 +1,7 @@
 ﻿using Cafe.BLL.Interfaces;
 using Cafe.Models.Ingredients;
 using Cafe.Models.IngredientsInProducts;
+using Cafe.Models.Products;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cafe.Controllers
@@ -19,6 +20,13 @@ namespace Cafe.Controllers
         {
             var result = await new IngredientsInProductsBuilder(services).BuildAll();
 
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> CompositionProduct(int id)
+        {
+            var result = await new IngredientsInProductsBuilder(services).Composition(id);
             return Ok(result);
         }
     }

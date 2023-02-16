@@ -1,7 +1,7 @@
 ﻿
 namespace Cafe.BLL.DTO
 {
-    public class ProductsDTO
+    public class ProductsDTO : BaseDTO
     {
         public int Id { get; set; }
 
@@ -21,6 +21,6 @@ namespace Cafe.BLL.DTO
         //[MaxLength(5)]
         public int Price { get; set; } = 0;
 
-        public bool isDeleted { get; set; } = false;
+        public IngredientsInProductsDTO ingredients { get; set; }
     }
 }

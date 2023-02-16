@@ -13,7 +13,10 @@ namespace Cafe.BLL.Services
         {
             this.data = data;
         }
-
+        /// <summary>
+        /// Получение списка всех ингредиентов
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<IngredientsDTO>> All()
         {
             var IngredientsDTO = await data.Ingredients

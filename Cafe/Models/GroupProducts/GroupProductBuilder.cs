@@ -14,14 +14,14 @@ namespace Cafe.Models.GroupProducts
             this.services = services;
         }
 
-        public async Task<List<ProductsResponseModel>> BuildAll()
+        public async Task<List<GroupProductsResponseModel>> BuildAll()
         {
             IEnumerable<GroupProductsDTO> groupProductsDTO = await services.All();
             var mapper = new MapperConfiguration(
-                cfg => cfg.CreateMap<GroupProductsDTO, ProductsResponseModel>())
+                cfg => cfg.CreateMap<GroupProductsDTO, GroupProductsResponseModel>())
                 .CreateMapper();
             var groupProductsResponseModels = mapper
-                .Map<IEnumerable<GroupProductsDTO>, List<ProductsResponseModel>>
+                .Map<IEnumerable<GroupProductsDTO>, List<GroupProductsResponseModel>>
                 (groupProductsDTO);
             return groupProductsResponseModels;
         }

@@ -3,7 +3,7 @@
 
 namespace Cafe.BLL.DTO
 {
-    public class GroupProductsDTO
+    public class GroupProductsDTO : BaseDTO
     {
         public int Id { get; set; }
         //[Required]
